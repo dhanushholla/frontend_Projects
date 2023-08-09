@@ -1,0 +1,19 @@
+.underLine{
+    color:black;
+    padding: 2px;
+    width:210px;
+}
+/* leverage hidden Element after to make the line */
+.underLine:after{
+    content:"";
+    display:block;/* making sure it is visible */
+    height:3px;
+    width:100%;
+    background-color:green;
+    transform: scaleX(0); /* initial making it as zero .. that's hidden going to make it 1 on hover*/
+    transform-origin: left; /* making from which side the line should come*/
+    transition: transform 0.4s ease; /* it is used to change value smoothly over a duration like transform will happen after 0.4s with ease effect*/
+}
+.underLine:hover::after{
+    transform: scaleX(1);
+}

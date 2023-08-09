@@ -1,0 +1,40 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color:black;
+    display: grid;
+    place-items: center;
+}
+
+.typeEffect{
+    /* used whitespace to remove next line cursor coming, overflow is hidden to make sure when typing is done 
+    then only we could see the letter .. step-end is like 2 steps on,off for cursor, steps() is like count,direction
+    border-right is end of content div acts like cursor */
+    background-color: powderblue;
+    border-radius: 0.7rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 1rem;
+    white-space: nowrap; 
+    overflow: hidden;
+    border-right: 0.14rem solid black;
+    animation: blinking 0.6s step-end infinite, typing 6s steps(46, end) infinite;
+}
+
+@keyframes blinking {
+    from {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 48%;
+    }
+}

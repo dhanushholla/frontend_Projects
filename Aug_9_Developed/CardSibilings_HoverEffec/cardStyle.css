@@ -1,0 +1,29 @@
+.cardWrapper{
+    display: flex;
+    background-color: powderblue;
+    border: 0.11rem solid black;
+    padding: 0.8rem;
+    justify-content: space-between;
+    border-radius: 3rem;
+    align-items: center;
+}
+.card{
+    width:100px;
+    height:100px;
+    background-color: grey;
+    border-radius: 30%;
+    border: 0.3rem solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    transition: .3s;
+}
+.card:not(:hover){ /* it here to maintain same of color event though wrapper is hovered but none of card selected*/
+    border: 0.3rem solid black;
+}
+.cardWrapper:hover > :not(:hover){ /* make dim color of card which are not hovered but mouse entered wrappper*/
+    opacity: 0.4;
+    border: 0.3rem solid black;
+}
+

@@ -1,0 +1,70 @@
+.heartShape{
+    margin: 100px;
+    height: 100px;
+    width:100px;
+    position: relative;/* gonna make after,before element move to absolute positions but relative to this parent*/
+    background-color: red;
+    transform: rotate(45deg);
+    animation: heartbeat 1s infinite linear;
+    animation-timing-function: steps(4);
+}
+.heartShape::after,.heartShape::before{
+    content: "";
+    position: absolute;/*allows to move freely*/
+    width: 100px;
+    height: 100px;
+    background-color: red;/*you can change this color and top left properties to look on the difference*/
+    border-radius:50% ;/*makes them both as circles*/
+}
+.heartShape::after{
+    top:-50px;
+}
+.heartShape::before{
+    left:-50px;
+}
+@keyframes heartbeat {
+    0%{
+        scale:1;
+    }
+    35%{
+        scale:1.12;
+    }
+    45%{
+        scale:1;
+    }
+    85%{
+        scale:1.11;
+    }
+}
+
+/* for better understanding look at this*/
+.illustrate{
+    margin-left: 200px; /*to move away from top left browser edge*/
+    height: 100px;
+    width:100px;
+    position: relative;/* gonna make after,before element move to absolute positions but relative to this parent*/
+    background-color: black;
+    transform: rotate(45deg); /*to make it straight not as a tilted one*/
+}
+.illustrate::after{
+    content: "";
+    position: absolute;/*allows to move freely*/
+    width: 100px;
+    height: 100px;
+    background-color: blue;/*you can change this color and top left properties to look on the difference*/
+    border-radius:50% ;/*makes them both as circles*/
+}
+.illustrate::before{
+    content: "";
+    position: absolute;/*allows to move freely*/
+    width: 100px;
+    height: 100px;
+    background-color: salmon;/*you can change this color and top left properties to look on the difference*/
+    border-radius:50% ;/*makes them both as circles*/
+}
+.illustrate::after{
+    top:-50px;
+}
+.illustrate::before{
+    left:-50px;
+}
